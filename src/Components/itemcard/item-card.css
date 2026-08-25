@@ -1,0 +1,124 @@
+.itemCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 4px 8px #00000020;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  gap: 15px;
+  animation: fadeUp 0.45s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.itemCard {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+.itemCard:visited,
+.itemCard:active,
+.itemCard:hover {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.itemCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 24px rgba(0, 34, 68, 0.16);
+}
+
+.itemImage {
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: transform 0.35s ease;
+}
+
+.itemCard:hover .itemImage {
+  transform: scale(1.04);
+}
+
+.itemStatusTopRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+}
+
+.status-not-found {
+  background-color: #dc2626;
+}
+
+.status-found {
+  background-color: #16a34a;
+}
+
+.statusText {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.itemContent {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.itemTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0c0000;
+}
+
+.itemDescription {
+  font-size: 14px;
+  color: #0c0000;
+}
+
+.itemOwner {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.itemOwnerLabel {
+  font-weight: 600;
+}
+
+.itemFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.viewButton {
+  background-color: #002244;
+  color: #fff;
+  border: none;
+  border-radius: 200px;
+  padding: 6px 20px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.viewButton:hover {
+  background-color: #003366;
+}
+
+.viewButton:active {
+  transform: scale(0.94);
+}

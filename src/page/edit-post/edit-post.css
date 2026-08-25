@@ -1,0 +1,345 @@
+:root {
+  --hef-primary: #002244;
+  --hef-secondary: #f0f4f8;
+  --hef-text: #333;
+  --hef-link: #007bff;
+  --hef-success: #16a34a;
+  --hef-error: #dc2626;
+}
+
+.hef-page {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: var(--hef-secondary);
+  min-height: 100vh;
+  animation: fadeUp 0.45s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hef-header {
+  width: 100%;
+  max-width: 900px;
+}
+
+.back-date-div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.hef-title {
+  color: var(--hef-primary);
+  font-size: 2.2em;
+  margin: 0;
+}
+
+.hef-link-back {
+  color: var(--hef-primary);
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 500;
+}
+.hef-link-back:hover {
+  text-decoration: underline;
+}
+
+.hef-date {
+  font-size: 1em;
+  color: #666;
+}
+
+.hef-box {
+  width: 100%;
+  max-width: 900px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 34, 68, 0.08);
+  border-radius: 8px;
+  padding: 40px;
+  animation: fadeUp 0.45s ease 0.1s both;
+}
+
+.hef-form {
+  display: flex;
+  gap: 40px;
+}
+
+.hef-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hef-col-left {
+  gap: 10px;
+}
+
+.hef-col-right {
+  gap: 20px;
+}
+
+.hef-imgBox {
+  width: 100%;
+  height: 200px;
+  border: 2px dashed #ccc;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+  transition: 0.3s;
+  position: relative;
+}
+
+.hef-imgBox::after {
+  background-color: #e0e0e0;
+  width: 100%;
+  height: 100%;
+  color: #002244;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 30%;
+  content: "Click here to Upload Photo";
+  font-size: 24px;
+  font-weight: 600;
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.hef-imgBox:hover::after {
+  cursor: pointer;
+  opacity: 90%;
+}
+
+.hef-imgBox img {
+  width: 80px;
+  height: 80px;
+  opacity: 0.5;
+}
+
+.hef-group {
+  width: 100%;
+}
+
+.hef-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #555;
+}
+
+.hef-page input[type="text"],
+.hef-page input[type="password"],
+.hef-page input[type="date"],
+.hef-page input[type="tel"],
+.hef-page textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1em;
+  color: var(--hef-text);
+  font-family: "Poppins", sans-serif;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hef-page input[type="text"]:focus,
+.hef-page input[type="password"]:focus,
+.hef-page input[type="date"]:focus,
+.hef-page input[type="tel"]:focus,
+.hef-page textarea:focus {
+  outline: none;
+  border-color: var(--hef-primary);
+  box-shadow: 0 0 0 3px rgba(0, 34, 68, 0.12);
+}
+
+.hef-group textarea {
+  height: 120px;
+  resize: vertical;
+  font-style: italic;
+  color: #666;
+}
+
+.hef-btn {
+  width: 100%;
+  background-color: var(--hef-primary);
+  color: white;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  transition: background-color 0.3s, transform 0.15s ease,
+    box-shadow 0.25s ease;
+  margin-top: 10px;
+}
+
+.hef-btn:hover {
+  background-color: #003366;
+  box-shadow: 0 6px 16px rgba(0, 34, 68, 0.25);
+}
+
+.hef-btn:active {
+  transform: scale(0.97);
+}
+
+.hef-modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.25s ease both;
+}
+
+.hef-modal {
+  background-color: white;
+  padding: 40px 60px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  animation: modalIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.hef-iconBox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.hef-errorBg {
+  background-color: var(--hef-error);
+}
+
+.hef-successBg {
+  background-color: var(--hef-success);
+}
+
+.hef-icon {
+  color: white;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.hef-modalTitle {
+  font-size: 1.5em;
+  color: var(--hef-text);
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.hef-modalMsg {
+  font-size: 1em;
+  color: #666;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.hef-successBtn {
+  background-color: var(--hef-success);
+  color: white;
+  padding: 10px 30px;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.15s ease;
+}
+
+.hef-successBtn:hover {
+  background-color: #15803d;
+}
+
+.hef-successBtn:active {
+  transform: scale(0.96);
+}
+
+@media (max-width: 768px) {
+  .hef-box {
+    padding: 25px 20px;
+  }
+
+  .hef-form {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .back-date-div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hef-page {
+    padding: 25px 12px;
+  }
+
+  .hef-title {
+    font-size: 1.7em;
+  }
+
+  .hef-modal {
+    padding: 30px 25px;
+  }
+}
